@@ -49,6 +49,14 @@
         We decided to focus on the San Francisco Bay area. The raw elevation above sea level are encoded in meters as pixel values, where negative indicates that pixel is under water.
         This is what the raw data look like rendered as a heatmap using the reviled jet color map:
         <img src="https://rawgit.com/ptweir/SFBayReliefModel/master/images/raw.png" alt="raw heatmap">
+        Turning this raw file into a vector image that the Glowforge could print turned out to be trivial using a handful of Python modules:
+        <ul>
+        <li>tifffile to read the raw data</li>
+        <li>scipy to resize the image</li>
+        <li>matplotlib to draw the contours and save them to an svg file</li>
+        <li>numpy for a few simple manipulations</li></ul>
+        Take a look at the entire script:
+        We used the Glowforge to cut each layer. We also used a lower power to cut the next layer up each time, to aid in assembly.
         <img src="https://rawgit.com/ptweir/SFBayReliefModel/master/map.svg" alt="map" width="936" height="702">
         <img src="https://rawgit.com/ptweir/SFBayReliefModel/master/images/no_color.jpg" alt="no color map">
         <img src="https://rawgit.com/ptweir/SFBayReliefModel/master/images/watercolor.jpg" alt="watercolor map">
